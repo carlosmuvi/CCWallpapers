@@ -33,7 +33,7 @@ class WallpaperListAdapter(
         fun bind(wallPaperViewModel: WallPaperViewModel) {
 
             with(wallPaperViewModel) {
-                Glide.with(itemView.context).load(pictureUrl).into(itemView.home_item_imageview)
+                Glide.with(itemView.context).load(pictureUrl).centerCrop().into(itemView.home_item_imageview)
                 itemView.setOnClickListener { itemClick(wallPaperViewModel) }
             }
         }
