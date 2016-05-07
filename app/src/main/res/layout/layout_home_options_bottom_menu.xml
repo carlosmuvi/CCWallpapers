@@ -15,7 +15,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:padding="16dp"
-      android:text="Establecer como fondo de pantalla"
+      android:text="@string/menu_option_set_as_wallpaper"
       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
       />
 
@@ -24,7 +24,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:padding="16dp"
-      android:text="Descargar"
+      android:text="@string/menu_option_download"
       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
       />
 
@@ -33,7 +33,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:padding="16dp"
-      android:text="Compartir"
+      android:text="@string/menu_option_share"
       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
       />
 
