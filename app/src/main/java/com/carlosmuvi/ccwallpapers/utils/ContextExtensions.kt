@@ -3,6 +3,7 @@ import android.content.Context
 import android.content.Intent
 import android.support.v4.app.ActivityCompat
 import android.support.v4.app.ActivityOptionsCompat
+import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.Toast
 
@@ -36,7 +37,16 @@ fun Context.getAttrId(themeRes: Int, attrRes: Int): Int {
     return attributeResourceId
 }
 
-fun Context.alert(message: String){
+fun Context.alert(message: String) {
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+}
+
+fun RecyclerView.onScroll(callback: () -> Unit) {
+    addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+            callback.invoke()
+        }
+
+    })
 }
 
