@@ -18,4 +18,8 @@ class HomePresenter : MvpBasePresenter<HomeView>() {
         view?.showWallpapers(a)
 
     }
+
+    fun onWallpaperOptionsClick() {
+        view?.showWallpaperOptionsMenu()
+    }
 }

@@ -31,6 +31,10 @@
 
   </android.support.design.widget.AppBarLayout>
 
+  <!-- MAIN CONTENT -->
   <include layout="@layout/layout_home_content"/>
+
+  <!-- BOTTOM SHEET -->
+  <include layout="@layout/layout_home_options_bottom_menu"/>
 
 </android.support.design.widget.CoordinatorLayout>

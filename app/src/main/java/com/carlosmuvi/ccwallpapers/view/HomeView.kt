@@ -8,5 +8,7 @@ import com.hannesdorfmann.mosby.mvp.MvpView
  */
 interface HomeView : MvpView {
     fun showWallpapers(mockList: List<WallPaperViewModel>)
+
+    fun showWallpaperOptionsMenu()
 }
 

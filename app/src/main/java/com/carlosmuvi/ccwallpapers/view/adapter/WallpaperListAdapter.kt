@@ -35,7 +35,7 @@ class WallpaperListAdapter(
             with(wallPaperViewModel) {
                 Glide.with(itemView.context).load(pictureUrl).centerCrop().into(itemView.home_item_imageview)
                 itemView.home_item_title.text = title
-                itemView.setOnClickListener { itemClick(wallPaperViewModel) }
+                itemView.home_item_options_button.setOnClickListener { itemClick(wallPaperViewModel) }
             }
         }
 
