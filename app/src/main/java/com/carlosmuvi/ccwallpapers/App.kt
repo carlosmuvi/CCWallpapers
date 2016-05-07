@@ -8,13 +8,13 @@ import com.carlosmuvi.ccwallpapers.utils.DelegatesExt
  */
 class App : Application() {
 
+    companion object {
+        var instance: App by DelegatesExt.notNullSingleValue()
+    }
+
     override fun onCreate() {
         super.onCreate()
         instance = this
-    }
-
-    companion object {
-        var instance: App by DelegatesExt.notNullSingleValue()
     }
 
 }

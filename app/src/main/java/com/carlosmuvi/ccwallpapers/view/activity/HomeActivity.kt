@@ -22,20 +22,7 @@ class HomeActivity : MvpActivity<HomeView, HomePresenter>(), HomeView {
     }
 
     private fun initRecycler() {
-        with(home_recyclerview) {
-            layoutManager = LinearLayoutManager(context)
-        }
-    }
-
-    private fun fakeWallpaperList(): List<WallPaperViewModel> {
-
-        var list: List<WallPaperViewModel> = emptyList()
-        for (i in 1..100) {
-            list += WallPaperViewModel("Viaje $i",
-                "http://media2.newsnet5.com/photo/2014/03/10/" +
-                    "chuck%20norris_crop_1394454213136_3349583_ver1.0_640_480.jpg")
-        }
-        return list
+            home_recyclerview.layoutManager = LinearLayoutManager(this)
     }
 
     override fun createPresenter(): HomePresenter {
@@ -43,7 +30,7 @@ class HomeActivity : MvpActivity<HomeView, HomePresenter>(), HomeView {
     }
 
     override fun showWallpapers(mockList: List<WallPaperViewModel>) {
-        home_recyclerview.adapter = WallpaperListAdapter(fakeWallpaperList(), { alert(it.title) })
+        home_recyclerview.adapter = WallpaperListAdapter(mockList, { alert(it.title) })
     }
 
 }

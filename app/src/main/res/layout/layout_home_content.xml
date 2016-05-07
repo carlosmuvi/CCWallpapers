@@ -11,18 +11,12 @@
     tools:context=".view.activity.HomeActivity"
     >
 
-  <android.support.v4.widget.SwipeRefreshLayout
-      android:id="@+id/home_swiperefresh"
+
+  <android.support.v7.widget.RecyclerView
+      android:id="@+id/home_recyclerview"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      >
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/home_recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/item_home_wallpaper"
-        />
-  </android.support.v4.widget.SwipeRefreshLayout>
+      tools:listitem="@layout/item_home_wallpaper"
+      />
 
 </RelativeLayout>

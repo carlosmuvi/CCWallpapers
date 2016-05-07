@@ -15,7 +15,7 @@
       android:layout_width="match_parent"
       android:layout_height="50dp"
       android:layout_gravity="bottom"
-      android:background="@color/colorPrimaryDark"
+      android:background="@color/item_home_wallpaper_actionsframe_color"
       >
 
     <ImageView
