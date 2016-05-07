@@ -11,20 +11,20 @@
     >
 
   <TextView
-    android:id="@+id/layout_home_options_bottom_menu_text_download"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:padding="16dp"
-    android:text="Texto de prueba"
-    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-    />
-
-  <TextView
       android:id="@+id/layout_home_options_bottom_menu_text_setaswpp"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:padding="16dp"
-      android:text="Texto de prueba"
+      android:text="Establecer como fondo de pantalla"
+      android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+      />
+
+  <TextView
+      android:id="@+id/layout_home_options_bottom_menu_text_download"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="16dp"
+      android:text="Descargar"
       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
       />
 
@@ -33,7 +33,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:padding="16dp"
-      android:text="Texto de prueba"
+      android:text="Compartir"
       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
       />
 

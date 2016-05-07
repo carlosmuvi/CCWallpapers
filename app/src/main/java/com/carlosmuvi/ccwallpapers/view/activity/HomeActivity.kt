@@ -1,5 +1,6 @@
 package com.carlosmuvi.ccwallpapers.view.activity
 
+import alert
 import android.os.Bundle
 import android.support.design.widget.BottomSheetBehavior
 import android.support.v7.widget.LinearLayoutManager
@@ -20,6 +21,7 @@ import onScroll
 class HomeActivity : MvpActivity<HomeView, HomePresenter>(), HomeView {
 
     var bottomSheetBehaviour by DelegatesExt.notNullSingleValue<BottomSheetBehavior<LinearLayout>>()
+    var currentSelectedWallpaper: WallPaperViewModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +41,10 @@ class HomeActivity : MvpActivity<HomeView, HomePresenter>(), HomeView {
     private fun initBottomSheetMenu() {
         bottomSheetBehaviour = BottomSheetBehavior.from(layout_home_options_bottom_menu_container);
         bottomSheetBehaviour.state = BottomSheetBehavior.STATE_HIDDEN
+
+        layout_home_options_bottom_menu_text_setaswpp.setOnClickListener {
+            presenter.onSetAsWallpaperClick(currentSelectedWallpaper!!)
+        }
     }
 
     private fun initRecycler() {
@@ -53,15 +59,22 @@ class HomeActivity : MvpActivity<HomeView, HomePresenter>(), HomeView {
     }
 
     override fun showWallpapers(mockList: List<WallPaperViewModel>) {
-        home_recyclerview.adapter = WallpaperListAdapter(mockList, { presenter.onWallpaperOptionsClick() })
+        home_recyclerview.adapter = WallpaperListAdapter(mockList, { presenter.onWallpaperOptionsClick(it) })
     }
 
-    override fun showWallpaperOptionsMenu() {
+    override fun showWallpaperOptionsMenu(selectedWallpaper: WallPaperViewModel) {
+        currentSelectedWallpaper = selectedWallpaper
         bottomSheetBehaviour.state = BottomSheetBehavior.STATE_EXPANDED
     }
 
     override fun hideWallpaperOptionsMenu() {
-        bottomSheetBehaviour.state = BottomSheetBehavior.STATE_HIDDEN
+        if (bottomSheetBehaviour.state != BottomSheetBehavior.STATE_HIDDEN) {
+            bottomSheetBehaviour.state = BottomSheetBehavior.STATE_HIDDEN
+        }
+    }
+
+    override fun showMessage(message: String) {
+        alert(message)
     }
 
     override fun onBackPressed() {
@@ -71,5 +84,6 @@ class HomeActivity : MvpActivity<HomeView, HomePresenter>(), HomeView {
             super.onBackPressed()
         }
     }
+
 }
 
