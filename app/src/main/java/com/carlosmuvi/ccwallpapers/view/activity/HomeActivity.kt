@@ -9,7 +9,7 @@ import com.carlosmuvi.ccwallpapers.view.HomePresenter
 import com.carlosmuvi.ccwallpapers.view.HomeView
 import com.carlosmuvi.ccwallpapers.view.adapter.WallpaperListAdapter
 import com.hannesdorfmann.mosby.mvp.MvpActivity
-import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.layout_home_content.*
 
 
 class HomeActivity : MvpActivity<HomeView, HomePresenter>(), HomeView {
